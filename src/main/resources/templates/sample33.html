@@ -17,7 +17,18 @@
     <span>あなたは管理者ですね</span>
   </div>
   <div sec:authorize="hasRole('ROLE_USER')">
-    <div>あなたはユーザですね．</div>
+    <div>あなたはユーザですね</div>
+  </div>
+
+  <div>引き算を実行しましょう(Sample3-6)</div>
+  <form th:action="@{/sample3/step6}" method="post">
+    <input type="number" name="hiku1" />-
+    <input type="number" name="hiku2" />
+    <input type="submit" value="計算"><input type="reset" value="リセット">
+  </form>
+  <div th:if="${hikukekka}">
+    結果：[[${hikukekka}]]
+  </div>
   </div>
 </body>
 
